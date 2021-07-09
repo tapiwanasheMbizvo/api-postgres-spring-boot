@@ -40,6 +40,20 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
+    public Student getOneStudent(Long id){
+
+        boolean existsById = studentRepository.existsById(id);
+
+        if(!existsById){
+            throw  new IllegalStateException("Student does not exist "+id);
+
+        }
+
+
+
+        return  studentRepository.getById(id);
+    }
+
     public Student updateStudent(Student student) {
 
         boolean existsById = studentRepository.existsById(student.getId());

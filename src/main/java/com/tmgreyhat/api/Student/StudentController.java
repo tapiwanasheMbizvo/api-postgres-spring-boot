@@ -24,6 +24,12 @@ public class StudentController {
         return  studentService.getStudentsList();
 
     }
+    @GetMapping(path = "{thisOne}")
+    public  Student getOneStudent(@PathVariable(name = "thisOne") Long id){
+
+        //System.out.println("YEEE WE GOT HERE "+id);
+        return  studentService.getOneStudent(id);
+    }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public  Student addStudent(@RequestBody  Student student){
