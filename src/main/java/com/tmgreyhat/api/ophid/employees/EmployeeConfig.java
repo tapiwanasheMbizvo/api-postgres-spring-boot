@@ -1,6 +1,5 @@
 package com.tmgreyhat.api.ophid.employees;
 
-import com.tmgreyhat.api.Teacher.TeacherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +19,7 @@ public class EmployeeConfig {
                             "Central Office",
                             "119",
                             "IT",
-                            "Java Developer"
+                            "Java Software  Developer"
 
                     )
             );

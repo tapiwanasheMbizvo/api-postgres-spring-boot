@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
-import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/v1/students")
@@ -24,11 +24,11 @@ public class StudentController {
         return  studentService.getStudentsList();
 
     }
-    @GetMapping(path = "{thisOne}")
-    public  Student getOneStudent(@PathVariable(name = "thisOne") Long id){
+    @GetMapping(path = "{id}")
+    public Optional<Student> getOneStudent(@PathVariable(name = "id") Long id){
 
-        //System.out.println("YEEE WE GOT HERE "+id);
         return  studentService.getOneStudent(id);
+
     }
 
     @PostMapping(consumes = "application/json", produces = "application/json")

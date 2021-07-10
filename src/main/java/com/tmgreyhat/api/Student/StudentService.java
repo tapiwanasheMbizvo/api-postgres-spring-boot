@@ -40,7 +40,7 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
-    public Student getOneStudent(Long id){
+    public Optional<Student> getOneStudent(Long id){
 
         boolean existsById = studentRepository.existsById(id);
 
@@ -51,7 +51,7 @@ public class StudentService {
 
 
 
-        return  studentRepository.getById(id);
+        return  studentRepository.findById(id);
     }
 
     public Student updateStudent(Student student) {

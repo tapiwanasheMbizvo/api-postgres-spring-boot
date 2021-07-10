@@ -1,13 +1,12 @@
 package com.tmgreyhat.api.Student;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
 @Entity
 @Table(name = "students")
-public class Student implements Serializable {
+public class Student  {
     @Id
     @SequenceGenerator(
             name = "student_sequence",
